@@ -3,46 +3,45 @@ package com.mitocode.model;
 import lombok.Data;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
-
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
 @Data
 @Entity
-@Table(name="medicos")
-@SQLDelete(sql = "UPDATE medicos SET estado = false WHERE id_medico = ?")
-@Where(clause = "estado = true")
-public class Medico {
+@Table(name="medic")
+@SQLDelete(sql = "UPDATE medic SET status = false WHERE id_medic = ?")
+@Where(clause = "status = true")
+public class Medic {
 	
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idMedico;
+	private Integer idMedic;
 
 	@Size(min = 3, message = "{first_name.size}")
-	@Column(name = "nombres", nullable = false, length = 70)
-	private String nombres;
+	@Column(name = "first_name", nullable = false, length = 70)
+	private String firstName;
 
 	@Size(min = 3, message = "{last_name.size}")
-	@Column(name = "apellidos", nullable = false, length = 70)
-	private String apellidos;
+	@Column(name = "last_name", nullable = false, length = 70)
+	private String lastName;
 
 	@Size(min = 9, max = 9, message = "{dui.size}")
 	@Column(name = "dui", nullable = false, length = 9)
 	private String dui;
 
-	@Size(min = 8, max = 8, message = "{telefono.size}")
-	@Column(name = "telefono", nullable = false, length = 8)
-	private String telefono;
+	@Size(min = 8, max = 8, message = "{address.size}")
+	@Column(name = "address", nullable = false, length = 8)
+	private String address;
 	
 	@Email
-	@Size(message = "Email debe hasta 150 caracteres en formato xxxxx@xxxxx.com")
+	@Size(message = "{email.size")
 	@Column(name = "email", length = 150)
 	private String email;
 
 	@Column(name = "photoUrl")
 	private String photoUrl;
 	
-	@Column(name = "estado")
-	private Boolean estado;
+	@Column(name = "status")
+	private Boolean status;
 }
