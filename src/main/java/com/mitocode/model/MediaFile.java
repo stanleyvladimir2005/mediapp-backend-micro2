@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "archivo")
+@Table(name = "mediaFile")
 public class MediaFile {
 
 	@Id
