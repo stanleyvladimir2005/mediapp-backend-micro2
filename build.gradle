@@ -16,7 +16,7 @@ repositories {
 }
 
 ext {
-    set('springCloudVersion', "2021.0.8")
+    set('springCloudVersion', "2021.0.9")
 }
 
 dependencies {
@@ -27,7 +27,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springdoc:springdoc-openapi-ui:1.8.0'
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
-    implementation 'net.sf.jasperreports:jasperreports:7.0.0'
+    implementation 'net.sf.jasperreports:jasperreports:7.0.1'
     implementation 'com.github.librepdf:openpdf:2.0.3'
     implementation 'org.springframework.boot:spring-boot-starter-security:2.2.5.RELEASE'
     implementation 'org.springframework.cloud:spring-cloud-starter-oauth2:2.2.5.RELEASE'
